@@ -14,12 +14,15 @@ var repository = [
 ];
 
 
-for (var i = 0; i <= 2; i ++){
+for (var i = 0; i < repository.length; i ++){
+  document.write("<p>");
   document.write(repository[i].name+ " (Height:"+ repository[i].height+ ")  ");
-}
+  document.write("</p><br>");
 
-for (var i = 0; i <= 2; i ++){
-  if (repository[i].height > 1){
+  if (repository[i].height > 1.0){
+    document.write("<p>");
     document.write(repository[i].name+ " (Height:"+ repository[i].height+ ") -Wow, that's big!");
+    document.write("</p><br>");
   }
+
 }
