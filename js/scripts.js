@@ -1,4 +1,4 @@
-var repository = [
+/* var repository = [
 
   {name: 'bulbasaur',
   height: .7,
@@ -14,6 +14,8 @@ var repository = [
 ];
 
 
+
+
 for (var i = 0; i < repository.length; i ++){
 
   document.write("<p>");
@@ -26,3 +28,36 @@ for (var i = 0; i < repository.length; i ++){
   document.write("</p><br>");
 
 }
+
+*/
+
+var pokemonRepository = (function () {
+  var repository =  [
+
+    {name: 'bulbasaur',
+    height: .7,
+    type: ['grass','poison']},
+
+    {name: 'charmander',
+    height: .6,
+    type: ['fire']},
+
+    {name: 'blastoise',
+    height: 1.6,
+    type: ['water']},
+  ];
+
+  function add(pokemon) {
+    repository.push(pokemon);
+  }
+
+  function getAll() {
+    return repository;
+  }
+
+  return{
+    add: add,
+    getAll: getAll
+  };
+
+})();
