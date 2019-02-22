@@ -61,3 +61,10 @@ var pokemonRepository = (function () {
   };
 
 })();
+
+
+var pokemon = pokemonRepository.getAll();
+
+pokemon.forEach(function(output){
+  console.log(output);
+});
