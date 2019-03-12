@@ -1,0 +1,42 @@
+body{
+  background-color: #F8F8F8;
+}
+
+
+
+.pokedex{
+  margin: 30px;
+  padding:10PX;
+  font-size:20px;
+}
+
+.pokedex li{
+  padding: 15px;
+  list-style: none;
+  background-color: #D3D3D3;
+  margin:0 50% 20px 0;
+
+
+}
+.pokedex :hover{
+  opacity: .5;
+}
+
+.list-button{
+  background-color: #D3D3D3;
+  border: none;
+  text-decoration: none;
+  font-size: 18px;
+  }
+}
+
+#title{
+  margin:30px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .pokedex li{
+  margin: 0 0 20px 0;
+  }
+}
