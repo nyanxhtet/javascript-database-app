@@ -22,6 +22,11 @@ var pokemonRepository = (function () {
     return repository;
   }
 
+  function showDetails(pokemon){
+    console.log(pokemon);
+  }
+
+
   function addListItem(item) {
     var newPokemon = document.createElement('li');
     newPokemon.classList.add('list-item');
@@ -34,12 +39,17 @@ var pokemonRepository = (function () {
 
     var $pokedex = document.querySelector('.pokedex');
     $pokedex.appendChild(newPokemon);
+
+    newButton.addEventListener('click', pokemonRepository.showDetails);
+
   };
+
 
   return{
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addListItem: addListItem,
+    showDetails: showDetails,
   };
 
 })();
