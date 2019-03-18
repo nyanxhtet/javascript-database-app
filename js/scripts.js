@@ -1,15 +1,15 @@
 var pokemonRepository = (function () {
   var repository =  [
 
-    {name: 'bulbasaur',
+    {name: 'Bulbasaur',
     height: .7,
     type: ['grass','poison']},
 
-    {name: 'charmander',
+    {name: 'Charmander',
     height: .6,
     type: ['fire']},
 
-    {name: 'blastoise',
+    {name: 'Blastoise',
     height: 1.6,
     type: ['water']},
   ];
@@ -23,7 +23,7 @@ var pokemonRepository = (function () {
   }
 
   function showDetails(pokemon){
-    console.log(pokemon);
+    console.log('hello');
   }
 
 
@@ -40,7 +40,11 @@ var pokemonRepository = (function () {
     var $pokedex = document.querySelector('.pokedex');
     $pokedex.appendChild(newPokemon);
 
-    newButton.addEventListener('click', pokemonRepository.showDetails);
+
+    newButton.addEventListener('click', function(showDetails){
+      pokemonRepository.showDetails();
+    });
+
 
   };
 
