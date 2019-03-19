@@ -23,7 +23,7 @@ var pokemonRepository = (function () {
   }
 
   function showDetails(pokemon){
-    console.log('hello');
+    console.log(pokemon);
   }
 
 
@@ -41,8 +41,8 @@ var pokemonRepository = (function () {
     $pokedex.appendChild(newPokemon);
 
 
-    newButton.addEventListener('click', function(showDetails){
-      pokemonRepository.showDetails();
+    newButton.addEventListener('click', function(details){
+      pokemonRepository.showDetails(item);
     });
 
 
@@ -57,8 +57,6 @@ var pokemonRepository = (function () {
   };
 
 })();
-
-
 
 pokemonRepository.getAll().forEach(function(pokemon){
   pokemonRepository.addListItem(pokemon);
