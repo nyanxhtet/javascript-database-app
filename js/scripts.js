@@ -41,7 +41,7 @@ var pokemonRepository = (function () {
     $pokedex.appendChild(newPokemon);
 
 
-    newButton.addEventListener('click', function(details){
+    newButton.addEventListener('click', function(e){
       pokemonRepository.showDetails(item);
     });
 
