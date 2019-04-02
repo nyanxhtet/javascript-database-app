@@ -76,24 +76,6 @@ var pokemonRepository = (function () {
 
 
 
-    //this closes the modal is 'escape' key is pressed AND if modal has visible class.
-
-    window.addEventListener('keydown', function (e)  {
-      if (e.key === 'Escape' && $modalContainer.classList.contains('visible')){
-        hideModal();
-      }
-    });
-
-    //this closes the modal when anywhere in the modal-container is pressed (background, outside of modal)
-
-    $modalContainer.addEventListener('click', function (e) {
-      var target= e.target;
-      if (target === $modalContainer) {
-        hideModal();
-      };
-    });
-
-
 
   };
 
@@ -128,10 +110,24 @@ var pokemonRepository = (function () {
     });
   }
 
-  var closeButton = document.querySelector('close-modal');
-  closeButton.addEventListener('click', function (){
-    hideModal();
+
+  //this closes the modal is 'escape' key is pressed AND if modal has visible class.
+
+  window.addEventListener('keydown', function (e)  {
+    if (e.key === 'Escape' && $modalContainer.classList.contains('visible')){
+      hideModal();
+    }
   });
+
+  //this closes the modal when anywhere in the modal-container is pressed (background, outside of modal)
+
+  $modalContainer.addEventListener('click', function (e) {
+    var target= e.target;
+    if (target === $modalContainer) {
+      hideModal();
+    };
+  });
+
 
   return{
     add: add,
