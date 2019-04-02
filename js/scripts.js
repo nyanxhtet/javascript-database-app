@@ -23,7 +23,6 @@ var pokemonRepository = (function () {
   function showDetails(pokemon){
     loadDetails(pokemon).then(function () {
       showModal();
-      console.log(pokemon);
 
       var modal = document.createElement('div');
       modal.classList.add('modal');
@@ -34,6 +33,12 @@ var pokemonRepository = (function () {
       var height = document.createElement('h2');
       height.innerText = 'Height: ' + pokemon.height;
 
+      var closeButton = document.createElement('button');
+      closeButton.innerText= 'close';
+      closeButton.classList.add('close-modal');
+      closeButton.addEventListener('click', function (){
+        hideModal();
+      });
 
       var image = document.createElement('IMG');
       image.setAttribute('src', pokemon.imageUrl);
@@ -44,6 +49,7 @@ var pokemonRepository = (function () {
       modal.appendChild(name);
       modal.appendChild(height);
       modal.appendChild(image);
+      modal.appendChild(closeButton);
       $modalContainer.appendChild(modal);
 
     });
@@ -68,12 +74,7 @@ var pokemonRepository = (function () {
       pokemonRepository.showDetails(item);
     });
 
-    //this removes the 'visible' class to the modal-container, ultimately hiding the modal.
 
-    var $closeModal = document.querySelector('.close-modal');
-    $closeModal.addEventListener('click', function (){
-      hideModal();
-    });
 
     //this closes the modal is 'escape' key is pressed AND if modal has visible class.
 
