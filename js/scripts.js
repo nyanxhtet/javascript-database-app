@@ -1,6 +1,7 @@
 var pokemonRepository = (function () {
   var repository =  [];
   var apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
+  var $modalContainer = document.querySelector('#modal-container');
 
   function add(pokemon) {
     repository.push(pokemon);
@@ -10,9 +11,43 @@ var pokemonRepository = (function () {
     return repository;
   }
 
+  function showModal(){
+    $modalContainer.classList.add('visible');
+  }
+
+  function hideModal(){
+    $modalContainer.classList.remove('visible');
+    $modalContainer.innerHTML = '';
+  }
+
   function showDetails(pokemon){
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);   });
+      showModal();
+      console.log(pokemon);
+
+      var modal = document.createElement('div');
+      modal.classList.add('modal');
+
+      var name = document.createElement('h1');
+      name.innerText = 'Name: ' + pokemon.name;
+
+      var height = document.createElement('h2');
+      height.innerText = 'Height: ' + pokemon.height;
+
+
+      var image = document.createElement('IMG');
+      image.setAttribute('src', pokemon.imageUrl);
+      image.setAttribute('width', '200px');
+      image.setAttribute('height', 'auto');
+      image.setAttribute('alt', 'picture of pokemon');
+
+      modal.appendChild(name);
+      modal.appendChild(height);
+      modal.appendChild(image);
+      $modalContainer.appendChild(modal);
+
+    });
+
   }
 
   function addListItem(item) {
@@ -33,8 +68,35 @@ var pokemonRepository = (function () {
       pokemonRepository.showDetails(item);
     });
 
+    //this removes the 'visible' class to the modal-container, ultimately hiding the modal.
+
+    var $closeModal = document.querySelector('.close-modal');
+    $closeModal.addEventListener('click', function (){
+      hideModal();
+    });
+
+    //this closes the modal is 'escape' key is pressed AND if modal has visible class.
+
+    window.addEventListener('keydown', function (e)  {
+      if (e.key === 'Escape' && $modalContainer.classList.contains('visible')){
+        hideModal();
+      }
+    });
+
+    //this closes the modal when anywhere in the modal-container is pressed (background, outside of modal)
+
+    $modalContainer.addEventListener('click', function (e) {
+      var target= e.target;
+      if (target === $modalContainer) {
+        hideModal();
+      };
+    });
+
+
 
   };
+
+
 
   function loadList() {
     return fetch(apiUrl).then(function (response) {
@@ -71,7 +133,9 @@ var pokemonRepository = (function () {
     addListItem: addListItem,
     showDetails: showDetails,
     loadList: loadList,
-    loadDetails: loadDetails
+    loadDetails: loadDetails,
+    showModal: showModal,
+    hideModal: hideModal,
   };
 
 })();
