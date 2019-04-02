@@ -128,6 +128,11 @@ var pokemonRepository = (function () {
     });
   }
 
+  var closeButton = document.querySelector('close-modal');
+  closeButton.addEventListener('click', function (){
+    hideModal();
+  });
+
   return{
     add: add,
     getAll: getAll,
