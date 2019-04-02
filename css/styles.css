@@ -1,8 +1,8 @@
 /* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
+v2.0 | 20110126
+License: none (public domain)
 
-   CSS RESET
+CSS RESET
 
 */
 
@@ -19,35 +19,35 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /*BODY STYLING STARTS HERE*/
@@ -73,11 +73,11 @@ body{
   height: 60px;
   width: 50%;
   margin-bottom: 20px;
-  }
+}
 
-  .list-button:hover{
-    opacity: .5;
-  }
+.list-button:hover{
+  opacity: .5;
+}
 
 
 #title{
@@ -89,44 +89,45 @@ body{
 }
 
 #modal-container{
-	position: fixed;
-	padding: 30px;
-	box-sizing: border-box;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0,0,0,0.5);
+  position: fixed;
+  padding: 30px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
 
-	z-index: 999;
-	overflow: auto;
-	display: grid;
-	text-align: center;
-	display: none;
+  z-index: 999;
+  overflow: auto;
+  display: grid;
+  text-align: center;
+  display: none;
 }
 
 .modal{
-	margin: auto;
-	display: inline-block;
-	box-sizing: border-box;
-	background: #fff;
-	padding: 15px;
-	width: 100%;
-	max-width: 80%;
-	text-align: center;
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 15px;
+  width: 100%;
+  max-width: 80%;
+  text-align: center;
+
 }
 
 .close-modal{
-	float: right;
-	-webkit-appearance: none;
-	border: 0;
-	background: none;
-	color: #777;
-	text-decoration: underline;
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: underline;
 }
 
 #modal-container.visible{
-	display: grid;
+  display: grid;
 }
 
 

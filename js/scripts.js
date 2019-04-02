@@ -51,9 +51,7 @@ var pokemonRepository = (function () {
       modal.appendChild(image);
       modal.appendChild(closeButton);
       $modalContainer.appendChild(modal);
-
     });
-
   }
 
   function addListItem(item) {
@@ -73,13 +71,7 @@ var pokemonRepository = (function () {
     newButton.addEventListener('click', function(e){
       pokemonRepository.showDetails(item);
     });
-
-
-
-
   };
-
-
 
   function loadList() {
     return fetch(apiUrl).then(function (response) {
@@ -141,7 +133,6 @@ var pokemonRepository = (function () {
   };
 
 })();
-
 
 pokemonRepository.loadList().then(function() {
   // Now the data is loaded!
